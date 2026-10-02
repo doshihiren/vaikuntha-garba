@@ -1,0 +1,6 @@
+# Live data & secrets stay on the server only — never in git
+data/*
+!data/.htaccess
+!data/index.php
+!data/secrets.sample.php
+.DS_Store

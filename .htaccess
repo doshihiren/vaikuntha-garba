@@ -1,0 +1,11 @@
+DirectoryIndex index.php
+Options -Indexes
+# Internal files — never open directly in a browser
+<FilesMatch "^(config|lib|admin_style|admin_nav)\.php$|\.(sqlite|sqlite-wal|sqlite-shm|json|imported|log)$">
+  Require all denied
+</FilesMatch>
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "same-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+</IfModule>
